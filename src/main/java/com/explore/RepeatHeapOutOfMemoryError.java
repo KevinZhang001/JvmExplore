@@ -28,15 +28,17 @@ public class RepeatHeapOutOfMemoryError {
     public void CreateByteObject(int size, int loopNum){
         int loopCounter = 0;
         while (loopCounter < loopNum){
+            System.out.println("loopCounter:" + loopCounter);
             CreateByteObject(size);
             loopCounter++;
+
         }
     }
 
     public static void main(String[] args) {
         try {
             RepeatHeapOutOfMemoryError o = new RepeatHeapOutOfMemoryError();
-            o.CreateByteObject(1, 100);
+            o.CreateByteObject(1, 50);
         }catch (Throwable e){
             e.printStackTrace();
         }
